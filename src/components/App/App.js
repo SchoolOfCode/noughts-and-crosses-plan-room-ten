@@ -19,29 +19,37 @@ function App() {
   const [playerMove, setPlayerMove] = useState(true);
   const winner = calculateWinner(board);
 
+  const clearState = () => {
+    setBoard({ ...board });
+  };
+
   function handleClick(i) {
-    console.log(i);
+    // console.log(i);
     // take in an index from the player click
     // we need to change the board arr
     // if index of board array the player has chosen is null, player can move
     // if player move add X to the index of the array
     // change move state
-    if (board[i] === null) {
-      setBoard((previousState) => {
-        return [
-          ...previousState.slice(0, i),
-          playerMove ? "x" : "o",
-          ...previousState.slice(i + 1),
-        ];
-      });
-      setPlayerMove(!playerMove);
-      console.log(playerMove);
-    } else return;
+    if (winner || board[i]) {
+      return;
+    }
+    setBoard((previousState) => {
+      return [
+        ...previousState.slice(0, i),
+        playerMove ? "x" : "o",
+        ...previousState.slice(i + 1),
+      ];
+    });
+    setPlayerMove(!playerMove);
+    console.log(playerMove);
   }
 
   return (
     <div className="App">
       <Board board={board} onClick={handleClick} />
+      <div>
+        <h2>The winner is: {winner}</h2>
+      </div>
     </div>
   );
 }
