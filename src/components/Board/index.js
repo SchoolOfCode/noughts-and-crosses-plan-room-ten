@@ -2,11 +2,11 @@ import Square from "../Square";
 
 function Board({ board, onClick }) {
   const style = {
-    border: "4px solid darkblue",
+    border: "4px solid violet",
     borderRadius: "10px",
     width: "250px",
     height: "250px",
-    margin: "0 auto",
+    margin: "75px auto",
     display: "grid",
     gridTemplate: "repeat(3, 1fr) / repeat(3, 1fr)",
   };
