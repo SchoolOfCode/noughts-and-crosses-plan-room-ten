@@ -17,11 +17,11 @@ function App() {
 
   const [playerMove, setPlayerMove] = useState(true);
 
-  function handleClick({ index }) {
+  function handleClick(i) {
     // we need to change the borad arr
     // if index of board array the player has chosen is null, player can move
-    // add X to the index of the array
     // Is it the players move ?
+    // add X to the index of the array
 
     setBoard();
   }
