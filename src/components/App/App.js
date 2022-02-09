@@ -48,7 +48,7 @@ function App() {
     <div className="App">
       <Board board={board} onClick={handleClick} />
       <div>
-        <h2>The winner is: {winner}</h2>
+        <h2>{winner ? "Winner: " + winner : "Pick your move"}</h2>
       </div>
     </div>
   );
