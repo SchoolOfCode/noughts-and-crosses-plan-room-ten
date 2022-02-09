@@ -1,10 +1,19 @@
 import React from "react";
 
+const style = {
+  background: "lightblue",
+  border: "2px solid darkblue",
+  fontSize: "30px",
+  fontWeight: "800",
+  cursor: "pointer",
+  outline: "none",
+};
+
 function Square({ value, onClick, id }) {
   return (
-    <div onClick={() => onClick(id)}>
-      <p>{value}</p>
-    </div>
+    <button style={style} onClick={() => onClick(id)}>
+      {value}
+    </button>
   );
 }
 

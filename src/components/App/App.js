@@ -24,10 +24,17 @@ function App() {
     // if index of board array the player has chosen is null, player can move
     // if player move add X to the index of the array
     // change move state
-
-    setBoard((previousState) => {
-      return [...previousState, (previousState[i] = "X")];
-    });
+    if (board[i] === null) {
+      setBoard((previousState) => {
+        return [
+          ...previousState.slice(0, i),
+          playerMove ? "x" : "o",
+          ...previousState.slice(i + 1),
+        ];
+      });
+      setPlayerMove(!playerMove);
+      console.log(playerMove);
+    } else return;
   }
 
   return (
