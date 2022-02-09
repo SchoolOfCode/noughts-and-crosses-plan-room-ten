@@ -23,6 +23,10 @@ function App() {
     setBoard({ ...board });
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   function handleClick(i) {
     // console.log(i);
     // take in an index from the player click
@@ -49,6 +53,7 @@ function App() {
       <Board board={board} onClick={handleClick} />
       <div>
         <h2>The winner is: {winner}</h2>
+        <button onClick={refreshPage}>Click to play again!</button>
       </div>
     </div>
   );
