@@ -19,9 +19,9 @@ function App() {
   const [playerMove, setPlayerMove] = useState(true);
   const winner = calculateWinner(board);
 
-  const clearState = () => {
-    setBoard({ ...board });
-  };
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   function handleClick(i) {
     // console.log(i);
@@ -49,6 +49,8 @@ function App() {
       <Board board={board} onClick={handleClick} />
       <div>
         <h2>{winner ? "Winner: " + winner : "Pick your move"}</h2>
+
+        <button onClick={refreshPage}>Click to play again!</button>
       </div>
     </div>
   );
