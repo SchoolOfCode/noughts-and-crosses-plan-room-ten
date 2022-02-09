@@ -1,6 +1,7 @@
 import "./App.css";
 import Board from "../Board";
 import { useState } from "react";
+import { calculateWinner } from "../../helper";
 
 function App() {
   const [board, setBoard] = useState([
@@ -16,6 +17,7 @@ function App() {
   ]);
 
   const [playerMove, setPlayerMove] = useState(true);
+  const winner = calculateWinner(board);
 
   function handleClick(i) {
     console.log(i);
