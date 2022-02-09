@@ -1,6 +1,7 @@
 import Board from "../Board";
 import { useState } from "react";
 import { winnerWinner } from "../../help";
+import "./App.css";
 
 function App() {
   const [board, setBoard] = useState([
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>0's & X's</h1>
       <Board board={board} onClick={handleClick} />
       <div>
         <h2>{winner ? "Winner: " + winner : "Pick your move"}</h2>
