@@ -1,4 +1,3 @@
-import "./App.css";
 import Board from "../Board";
 import { useState } from "react";
 import { winnerWinner } from "../../help";
