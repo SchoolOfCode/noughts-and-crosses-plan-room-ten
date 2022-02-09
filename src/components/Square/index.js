@@ -1,6 +1,8 @@
-function Square({ value, onClick }) {
+import React from "react";
+
+function Square({ value, onClick, id }) {
   return (
-    <div>
+    <div onClick={() => onClick(id)}>
       <p>{value}</p>
     </div>
   );
